@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  jadiss-batch:
+    build: .
+    container_name: jadiss-batch
+    ports:
+      - "8092:8092"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=3309
+      - DB_USER=root
+      - DB_PASSWORD=jadiss##
+      - DB_NAME=jds_batch
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=jadiss01##
+      - POSTGRES_DB=core
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=jadiss01##
+      - POSTGRES_DB=core
+    volumes:
+      - .:/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
