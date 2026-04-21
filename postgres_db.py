@@ -10,7 +10,7 @@ class PostgresDB:
             'host': os.getenv('POSTGRES_HOST', 'host.docker.internal'),
             'port': int(os.getenv('POSTGRES_PORT', 5432)),
             'user': os.getenv('POSTGRES_USER', 'root'),
-            'password': os.getenv('POSTGRES_PASSWORD', 'jadiss01##'),
+            'password': os.getenv('POSTGRES_PASSWORD', '********'),
             'database': os.getenv('POSTGRES_DB', 'core')
         }
         print(f"PostgreSQL config: {self.config}")
